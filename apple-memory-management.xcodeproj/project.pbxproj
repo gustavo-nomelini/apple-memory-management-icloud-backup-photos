@@ -6,8 +6,13 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		87A5A39E304CEB510061881C /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 87A5A39D304CEB4D0061881C /* .gitignore */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		87A5A38D304CE98F0061881C /* apple-memory-management.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "apple-memory-management.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		87A5A39D304CEB4D0061881C /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -34,6 +39,7 @@
 			children = (
 				87A5A38F304CE98F0061881C /* apple-memory-management */,
 				87A5A38E304CE98F0061881C /* Products */,
+				87A5A39D304CEB4D0061881C /* .gitignore */,
 			);
 			sourceTree = "<group>";
 		};
@@ -109,6 +115,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				87A5A39E304CEB510061881C /* .gitignore in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
