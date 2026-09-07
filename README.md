@@ -29,9 +29,10 @@ The planned workflow is:
 6.  Report progress, errors, duplicates, verification results, and
     storage savings.
 
-> **Project status:** This repository is currently an initial Xcode
-> project scaffold. Core media scanning, iCloud verification, duplicate
-> detection, and the backup pipeline are still being implemented.
+> **Project status:** This repository now contains a Swift Package Manager
+> boilerplate and an incomplete Xcode project container. Core media scanning,
+> iCloud verification, duplicate detection, and the backup pipeline are still
+> being implemented.
 
 ------------------------------------------------------------------------
 
@@ -419,8 +420,11 @@ Do not commit:
 
 ## 🧪 Development & Testing
 
-The repository currently contains an Xcode project container but does
-not yet contain the complete application implementation or test suite.
+The repository currently contains a Swift Package Manager boilerplate and an
+incomplete Xcode project container. The package provides the initial domain
+models, filesystem adapter, SHA-256 hashing, scanner, backup boundary, SwiftUI
+app shell, and one deterministic hashing test. Photos, iCloud, iOS-device,
+duplicate-index, resume, and progress integrations are not implemented yet.
 
 Before implementing new functionality:
 
@@ -457,11 +461,18 @@ drives should remain separate from unit tests.
 
 ### Local validation
 
-Inspect available schemes before building:
+The current boilerplate can be built and tested with Swift Package Manager:
 
 ``` bash
-open apple-memory-management.xcodeproj
+swift build
+swift test
+```
 
+The checked-in Xcode project is not yet usable because its `project.pbxproj`
+file is missing. Do not invent an Xcode scheme until the project is repaired.
+When a valid project target exists, inspect it before building:
+
+``` bash
 xcodebuild -list \
   -project apple-memory-management.xcodeproj
 
