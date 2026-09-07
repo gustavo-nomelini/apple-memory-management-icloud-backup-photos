@@ -468,6 +468,21 @@ swift build
 swift test
 ```
 
+To run the SwiftUI executable as a real macOS application, package it as an
+`.app` bundle so Launch Services receives a valid bundle identifier:
+
+``` bash
+chmod +x Scripts/build-app.sh
+Scripts/build-app.sh
+open .build/AppleMediaManager.app
+```
+
+Running the raw binary with `swift run` is useful for compiler validation, but
+it does not provide application bundle metadata. macOS may then print
+`com.apple.linkd.autoShortcut` connection and missing-main-bundle-identifier
+diagnostics. Those messages come from system services and do not indicate a
+Swift compilation failure.
+
 The checked-in Xcode project is not yet usable because its `project.pbxproj`
 file is missing. Do not invent an Xcode scheme until the project is repaired.
 When a valid project target exists, inspect it before building:
