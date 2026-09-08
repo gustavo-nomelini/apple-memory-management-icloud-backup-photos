@@ -425,6 +425,9 @@ incomplete Xcode project container. The package provides the initial domain
 models, filesystem adapter, SHA-256 hashing, scanner, backup boundary, SwiftUI
 app shell, and one deterministic hashing test. Photos, iCloud, iOS-device,
 duplicate-index, resume, and progress integrations are not implemented yet.
+The current app shell's scan button performs a read-only scan of the user's
+`~/Pictures` directory and displays discovered files; it does not yet scan the
+Photos library or iCloud.
 
 Before implementing new functionality:
 
@@ -467,6 +470,21 @@ The current boilerplate can be built and tested with Swift Package Manager:
 swift build
 swift test
 ```
+
+To run the SwiftUI executable as a real macOS application, package it as an
+`.app` bundle so Launch Services receives a valid bundle identifier:
+
+``` bash
+chmod +x Scripts/build-app.sh
+Scripts/build-app.sh
+open .build/AppleMediaManager.app
+```
+
+Running the raw binary with `swift run` is useful for compiler validation, but
+it does not provide application bundle metadata. macOS may then print
+`com.apple.linkd.autoShortcut` connection and missing-main-bundle-identifier
+diagnostics. Those messages come from system services and do not indicate a
+Swift compilation failure.
 
 The checked-in Xcode project is not yet usable because its `project.pbxproj`
 file is missing. Do not invent an Xcode scheme until the project is repaired.
