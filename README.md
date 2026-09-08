@@ -425,6 +425,9 @@ incomplete Xcode project container. The package provides the initial domain
 models, filesystem adapter, SHA-256 hashing, scanner, backup boundary, SwiftUI
 app shell, and one deterministic hashing test. Photos, iCloud, iOS-device,
 duplicate-index, resume, and progress integrations are not implemented yet.
+The current app shell's scan button performs a read-only scan of the user's
+`~/Pictures` directory and displays discovered files; it does not yet scan the
+Photos library or iCloud.
 
 Before implementing new functionality:
 
